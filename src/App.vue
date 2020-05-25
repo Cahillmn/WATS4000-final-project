@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Game of Thrones Character Search</h1>
+   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <Characters msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Characters from './components/views/Characters.vue'
 
-export default {
+/* export default {
   name: 'App',
   components: {
     HelloWorld
   }
-}
+} */
 </script>
 
 <style>

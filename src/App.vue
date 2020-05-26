@@ -9,12 +9,12 @@
 <script>
 import Characters from './components/views/Characters.vue'
 
-/* export default {
+ export default {
   name: 'App',
   components: {
-    HelloWorld
+    Characters
   }
-} */
+} 
 </script>
 
 <style>

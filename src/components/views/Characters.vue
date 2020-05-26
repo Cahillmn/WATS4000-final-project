@@ -8,7 +8,7 @@
         <p>
           <label>
             Enter Male or Female
-            <input type="text" v-model="phrase" placeholder="gender" /> that:
+            <input type="text" v-model="gender" placeholder="gender" /> 
           </label>
         </p>
        <!-- <ul>
@@ -79,6 +79,7 @@ export default {
   components: {
     spinner: CubeSpinner,
     'message-container': MessageContainer
+  
   },
   data () {
     return {
@@ -102,7 +103,7 @@ export default {
     findCharacters: function() {
       this.showSpinner = true;
       this.results = null;
-      axios.get('https://www.anapioficeandfire.com/api/characters', {
+      axios.get('https://www.anapioficeandfire.com/api/characters/', {
         params: {
           ml: this.gender,
         }

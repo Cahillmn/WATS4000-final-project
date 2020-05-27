@@ -103,7 +103,7 @@ export default {
     findCharacters: function() {
       this.showSpinner = true;
       this.results = null;
-      axios.get('https://www.anapioficeandfire.com/api/characters/', {
+      axios.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50', {
         params: {
           gender: this.gender,
         }

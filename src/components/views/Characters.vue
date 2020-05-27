@@ -36,24 +36,24 @@
         </p>
       </form>
     </div>
-    <div class="character-list-container">
+    <div class="result-list-container">
       <h2>Characters Found</h2>
-      <ul class="character-list">
+     <!-- <ul class="result-list">
         <transition-group name="slideRight" tag="div" appear>
-        <li v-for="(character,index) in characters" :key="index">
-          {{ gender }}&nbsp;
-         <!-- <button v-on:click="removeWord(word)" class="remove-word">x</button> -->
+        <li v-for="(result,index) in results" :key="index">
+          {{ name }}&nbsp;
+         <button v-on:click="removeWord(word)" class="remove-word">x</button> 
         </li>
         </transition-group>
-      </ul>
+      </ul> -->
     </div>
     <div class="results-container">
       <spinner v-if="showSpinner"></spinner>
       <h2 v-if="results && results.length > 0">{{ results.length }} Characters Found</h2>
       <ul v-if="results && results.length > 0" class="results">
         <transition-group name="fade" tag="div" appear>
-        <li v-for="(character,index) in characters" class="item" :key="index">
-          <p class="result-characters">{{ character.name }}</p>
+        <li v-for="(result,index) in results" class="item" :key="index">
+          <p class="result-characters">{{ result.name }}</p>
           <p>
             <!-- <button v-on:click="addWord(item.word)" class="add-word">Add to WordList</button> -->
           </p>
@@ -105,7 +105,7 @@ export default {
       this.results = null;
       axios.get('https://www.anapioficeandfire.com/api/characters/', {
         params: {
-          ml: this.gender,
+          gender: this.gender,
         }
       })
       .then( response => {

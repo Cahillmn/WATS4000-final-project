@@ -11,26 +11,7 @@
             <input type="text" v-model="gender" placeholder="gender" /> 
           </label>
         </p>
-       <!-- <ul>
-          <li>
-            <label>
-              sounds like
-              <input type="text" v-model="soundsLike" placeholder="word or phrase" />
-            </label>
-          </li>
-          <li>
-            <label>
-              start with the letter
-              <input type="text" v-model="startLetter" placeholder="single letter" />
-            </label>
-          </li>
-          <li>
-            <label>
-              end with the letter
-              <input type="text" v-model="endLetter" placeholder="single letter" />
-            </label>
-          </li>
-        </ul> -->
+       
         <p>
           <button type="submit">Search</button>
         </p>

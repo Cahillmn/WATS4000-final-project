@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Characters from './components/views/Characters.vue'
+import Characters from './views/Characters.vue'
 
  export default {
   name: 'App',

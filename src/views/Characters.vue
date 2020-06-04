@@ -1,14 +1,17 @@
 <template>
-  <div>
+<div>
     <div class="messages">
       <message-container v-bind:messages="messages"></message-container>
     </div>
     <div class="characters-search">
       <form v-on:submit.prevent="findCharacters">
         <p>
-          <label>
-            Enter Male or Female
-            <input type="text" v-model="gender" placeholder="gender" /> 
+        <label for="gender">Gender: 
+            <select id="gender" v-model="gender">
+              <option value="">Select Gender.</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
           </label>
         </p>
        
@@ -18,7 +21,7 @@
       </form>
     </div>
     <div class="result-list-container">
-      <h2>Characters Found</h2>
+      
      <!-- <ul class="result-list">
         <transition-group name="slideRight" tag="div" appear>
         <li v-for="(result,index) in results" :key="index">
@@ -34,7 +37,18 @@
       <ul v-if="results && results.length > 0" class="results">
         <transition-group name="fade" tag="div" appear>
         <li v-for="(result,index) in results" class="item" :key="index">
-          <p class="result-characters">{{ result.name }}</p>
+          <h2 class="result-characters">{{ result.name }}</h2>
+         <!-- <p><router-link v-bind:to="{ name: 'CharacterDetails', params: { name: $route.results.name } }">Learn more about the character</router-link> -->
+          <p class="result-characters"><label>Gender: </label>{{ result.gender }}</p>
+          <p class="result-characters"><label>Culture: </label>{{ result.culture }}</p>
+          <p class="result-characters"><label>Born: </label>{{ result.born}}</p>
+          <p class="results-characters"><label>Died: </label>{{ result.died}}</p>
+          <ul class= 'title'>
+          <li v-for="title in results.titles" v-bind:class="title" :key="title">{{ title }}</li>
+          </ul> 
+          <!--<p class="result-characters"><label>Titles: </label>{{ result.titles }}</p> -->
+          <p class="result-characters"><label>Allegiances: </label>{{ result.allegiances }}</p>
+          <p class="result-characters"><label>Played by: </label>{{ result.playedBy }}</p>
           <p>
             <!-- <button v-on:click="addWord(item.word)" class="add-word">Add to WordList</button> -->
           </p>
@@ -51,6 +65,7 @@
 
 <script>
 import axios from 'axios';
+/*import { API } from "@/common/api";*/
 require('vue2-animate/dist/vue2-animate.min.css');
 import CubeSpinner from '@/components/CubeSpinner';
 import MessageContainer from '@/components/MessageContainer';
@@ -187,7 +202,8 @@ ul.word-list {
   color: #fff;
   font-weight: 300;
   font-size: 1.2rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: black;
+  
 }
 ul.errors {
   list-style-type: none;

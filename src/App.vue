@@ -1,7 +1,8 @@
 <template>
   <div id="app">
+    <img alt="GOT Logo" src="./assets/Logo.png">
   <h1>Game of Thrones Character Search</h1>
-   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    
     <Characters msg="Welcome to Your Vue.js App"/>
   </div>
 </template>

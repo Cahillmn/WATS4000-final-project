@@ -38,17 +38,27 @@
         <transition-group name="fade" tag="div" appear>
         <li v-for="(result,index) in results" class="item" :key="index">
           <h2 class="result-characters">{{ result.name }}</h2>
+           <p class="result-characters"><label>url: </label>{{ result.url }}</p>
          <!-- <p><router-link v-bind:to="{ name: 'CharacterDetails', params: { name: $route.results.name } }">Learn more about the character</router-link> -->
           <p class="result-characters"><label>Gender: </label>{{ result.gender }}</p>
           <p class="result-characters"><label>Culture: </label>{{ result.culture }}</p>
           <p class="result-characters"><label>Born: </label>{{ result.born}}</p>
           <p class="results-characters"><label>Died: </label>{{ result.died}}</p>
           <ul class= 'title'>
-          <li v-for="title in results.titles" v-bind:class="title" :key="title">{{ title }}</li>
+            <p>Title: </p>
+          <li v-for="title in result.titles" v-bind:class="title" :key="title">{{ title }}</li>
           </ul> 
           <!--<p class="result-characters"><label>Titles: </label>{{ result.titles }}</p> -->
-          <p class="result-characters"><label>Allegiances: </label>{{ result.allegiances }}</p>
-          <p class="result-characters"><label>Played by: </label>{{ result.playedBy }}</p>
+          <ul class= 'allegiances'>
+            <p>Allegiances: </p>
+          <li v-for="allegiance in result.allegiances" v-bind:class="title" :key="allegiance">{{ allegiances }}</li>
+          </ul> 
+           <p class="result-characters"><label>Allegiances: </label>{{ result.allegiances }}</p>
+          <ul class= 'allegiances'>
+            <p>Played by: </p>
+          <li v-for="playedBy in result.playedBy" v-bind:class="title" :key="playedBy">{{ playedBy }}</li>
+          </ul> 
+          <!-- <p class="result-characters"><label>Played by: </label>{{ result.playedBy }}</p> -->
           <p>
             <!-- <button v-on:click="addWord(item.word)" class="add-word">Add to WordList</button> -->
           </p>
@@ -82,6 +92,7 @@ export default {
       results: null,
       wordList: [],
       messages: [],
+      url: '',
       name: '',
       gender: '',
       culture: '',
@@ -121,6 +132,9 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  text-align: left;
+}
 .word-search {
   font-size: 1.2rem;
   white-space: nowrap;
@@ -159,11 +173,11 @@ button {
   font-size: 1.4rem;
   border-radius: 0;
 }
-button.add-word {
+/*button.add-word {
   background: #e8e8e8;
   color: #333;
   font-size: 0.8rem;
-}
+} 
 button.add-word:hover {
   background: #fde300;
 }
@@ -177,7 +191,7 @@ button.remove-word {
 button.remove-word:hover {
   background: #aa0000;
   color: #fde300;
-}
+} */
 h1,
 h2 {
   font-weight: normal;
@@ -193,6 +207,7 @@ ul.word-list {
   border-bottom: 1px solid #333;
 }
 .results li {
+  text-align: left;
   display: inline-block;
   margin: 10px;
   border: solid 1px #333;

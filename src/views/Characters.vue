@@ -38,30 +38,7 @@
         <transition-group name="fade" tag="div" appear>
         <li v-for="(result,index) in results" class="item" :key="index">
           <h2 class="result-characters">{{ result.name }}</h2>
-           <p class="result-characters"><label>url: </label>{{ result.url }}</p>
-         <!-- <p><router-link v-bind:to="{ name: 'CharacterDetails', params: { name: $route.results.name } }">Learn more about the character</router-link> -->
-          <p class="result-characters"><label>Gender: </label>{{ result.gender }}</p>
-          <p class="result-characters"><label>Culture: </label>{{ result.culture }}</p>
-          <p class="result-characters"><label>Born: </label>{{ result.born}}</p>
-          <p class="results-characters"><label>Died: </label>{{ result.died}}</p>
-          <ul class= 'title'>
-            <p>Title: </p>
-          <li v-for="title in result.titles" v-bind:class="title" :key="title">{{ title }}</li>
-          </ul> 
-          <!--<p class="result-characters"><label>Titles: </label>{{ result.titles }}</p> -->
-          <ul class= 'allegiances'>
-            <p>Allegiances: </p>
-          <li v-for="allegiance in result.allegiances" v-bind:class="title" :key="allegiance">{{ allegiances }}</li>
-          </ul> 
-           <p class="result-characters"><label>Allegiances: </label>{{ result.allegiances }}</p>
-          <ul class= 'allegiances'>
-            <p>Played by: </p>
-          <li v-for="playedBy in result.playedBy" v-bind:class="title" :key="playedBy">{{ playedBy }}</li>
-          </ul> 
-          <!-- <p class="result-characters"><label>Played by: </label>{{ result.playedBy }}</p> -->
-          <p>
-            <!-- <button v-on:click="addWord(item.word)" class="add-word">Add to WordList</button> -->
-          </p>
+          <!-- <p class="result-characters"><label>url: </label>{{ result.url }}</p> -->
         </li>
         </transition-group>
       </ul>
@@ -81,7 +58,7 @@ import CubeSpinner from '@/components/CubeSpinner';
 import MessageContainer from '@/components/MessageContainer';
 
 export default {
-  name: 'CharacterSearch',
+  name: 'Characters',
   components: {
     spinner: CubeSpinner,
     'message-container': MessageContainer
@@ -195,6 +172,7 @@ button.remove-word:hover {
 h1,
 h2 {
   font-weight: normal;
+  text-align: center;
 }
 ul.results,
 ul.word-list {

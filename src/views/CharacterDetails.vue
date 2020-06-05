@@ -8,7 +8,7 @@
     
   <div>
   <h2>Character Details<span v-if="characterDetails"> for {{ characterDetails.name }}</span></h2>
-  <p>{{ $route.params.url }}</p>
+  <!-- <p>{{ $route.params.url }}</p> -->
   <p>
       <router-link to="/">Home</router-link> 
      <!-- <router-link v-bind:to="{ name: 'Forecast', params: { cityId: $route.params.cityId } }">View 5-Day Forecast</router-link> -->
@@ -74,7 +74,7 @@ export default {
   components: {
     spinner: CubeSpinner,
     /*'message-container': MessageContainer*/
-    }
+
   },
   data () {
     return {

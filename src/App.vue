@@ -1,21 +1,17 @@
 <template>
   <div id="app">
-    <img alt="GOT Logo" src="./assets/Logo.png">
+    <img alt="GOT Logo" src="./assets/logo.png">
   <h1>Game of Thrones Character Search</h1>
   <router-view/>
-    
-    <Characters msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import Characters from './views/Characters.vue'
+
 
  export default {
   name: 'App',
-  components: {
-    Characters
-  }
+  
 } 
 </script>
 

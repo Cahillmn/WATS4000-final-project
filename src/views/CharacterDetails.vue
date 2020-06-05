@@ -8,8 +8,9 @@
     
   <div>
   <h2>Character Details<span v-if="characterDetails"> for {{ characterDetails.name }}</span></h2>
+  <p>{{ $route.params.url }}</p>
   <p>
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link> 
      <!-- <router-link v-bind:to="{ name: 'Forecast', params: { cityId: $route.params.cityId } }">View 5-Day Forecast</router-link> -->
     </p>
     <div v-if="CharacterDetails && errors.length===0"> 
@@ -57,23 +58,23 @@
         <p>Please adjust your search.</p>
       </div>
     </div>
-  
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Characters from '@/views/Characters';
+/*import Characters from '@/views/Characters';*/
 /*import { API } from "@/common/api";*/
 require('vue2-animate/dist/vue2-animate.min.css');
 import CubeSpinner from '@/components/CubeSpinner';
-import MessageContainer from '@/components/MessageContainer';
+/*import MessageContainer from '@/components/MessageContainer';*/
 
 export default {
   name: 'Characters',
   components: {
     spinner: CubeSpinner,
-    'message-container': MessageContainer
-  
+    /*'message-container': MessageContainer*/
+    }
   },
   data () {
     return {
@@ -94,6 +95,25 @@ export default {
       showSpinner: false
     }
   },
+
+  created () {
+    API.get('CharacterDetails', {
+      params: {
+          id: this.$route.params.url
+      }
+    })
+    .then(response => {
+      this.Characters = response.data
+    })
+    .catch(error => {
+      this.errors.push(error)
+    });
+  },
+  components: {
+    'House': House,
+    'error-list': ErrorList
+  },
+
   methods: {
     findCharacters: function() {
       this.showSpinner = true;

@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import WordSearch from '@/views/WordSearch'
+import Characters from '@/views/Characters'
+import CharacterDetails from '@/views/CharacterDetails'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
-    name: 'WordSearch',
-    component: WordSearch
+    name: 'Characters',
+    component: Characters
   }
 ]
 

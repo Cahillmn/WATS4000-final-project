@@ -7,7 +7,7 @@
     </p>
     
   <div>
-  <h2>Character Details<span v-if="characterDetails"> for {{ characterDetails.name }}</span></h2>
+  <h2>Character Detail<span v-if="characterDetails"> for {{ characterDetails.name }}</span></h2>
   <!-- <p>{{ $route.params.url }}</p> -->
   <p>
       <router-link to="/">Home</router-link> 

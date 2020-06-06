@@ -10,6 +10,21 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Characters',
     component: Characters
+  },
+  {
+    path: '/:url/details',
+    name: 'CharacterDetails',
+    component: CharacterDetails
+  },
+  {
+    path: '/:url/house',
+    name: 'House',
+    component: House
+  },
+  {
+    path: '/:url/house',
+    name: 'CubeSpinner',
+    component: CubeSpinner
   }
 ]
 const router = new VueRouter({

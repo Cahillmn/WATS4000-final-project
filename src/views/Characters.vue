@@ -61,7 +61,6 @@ import axios from 'axios';
 require('vue2-animate/dist/vue2-animate.min.css');
 import CubeSpinner from '@/components/CubeSpinner';
 import MessageContainer from '@/components/MessageContainer';
-
 export default {
   name: 'Characters',
   components: {
@@ -83,8 +82,6 @@ export default {
       titles: [],
       allegiances: [],
       playedBy: [],
-
-
       showSpinner: false
     }
   },
@@ -132,6 +129,7 @@ export default {
 }
 .results-container {
   clear: both;
+  
 }
 input[type="text"] {
   border-top: none;
@@ -155,25 +153,7 @@ button {
   font-size: 1.4rem;
   border-radius: 0;
 }
-/*button.add-word {
-  background: #e8e8e8;
-  color: #333;
-  font-size: 0.8rem;
-} 
-button.add-word:hover {
-  background: #fde300;
-}
-button.remove-word {
-  font-size: 0.5rem;
-  padding: 2px;
-  display: inline-block;
-  color: #333;
-  background: none;
-}
-button.remove-word:hover {
-  background: #aa0000;
-  color: #fde300;
-} */
+
 h1,
 h2 {
   font-weight: normal;
@@ -195,12 +175,13 @@ ul.word-list {
   margin: 10px;
   border: solid 1px #333;
   padding: 0.5rem;
-  width: 200px;
-  min-height: 100px;
-  color: #fff;
+  width: 500px;
+  min-height: 250px;
+  color: gold;
   font-weight: 300;
   font-size: 1.2rem;
   background: black;
+  
   
 }
 ul.errors {
@@ -212,7 +193,6 @@ ul.errors {
   padding: 0.5rem;
   margin: 10px 0;
 }
-
 a {
   color: #42b983;
 }

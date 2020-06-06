@@ -67,14 +67,14 @@ import axios from 'axios';
 import { API } from "@/common/api";
 require('vue2-animate/dist/vue2-animate.min.css');
 import CubeSpinner from '@/components/CubeSpinner';
+import House from '@/views/House';
 /*import MessageContainer from '@/components/MessageContainer';*/
-
 export default {
   name: 'Characters',
   components: {
     spinner: CubeSpinner,
+    'House': House,
     /*'message-container': MessageContainer*/
-
   },
   data () {
     return {
@@ -90,12 +90,9 @@ export default {
       titles: [],
       allegiances: [],
       playedBy: [],
-
-
       showSpinner: false
     }
   },
-
   created () {
     API.get('CharacterDetails', {
       params: {
@@ -109,11 +106,10 @@ export default {
       this.errors.push(error)
     });
   },
-  components: {
+  /*components: {
     'House': House,
-    /*'error-list': ErrorList*/
-  },
-
+    'error-list': ErrorList
+  },*/
   methods: {
     findCharacters: function() {
       this.showSpinner = true;
@@ -149,7 +145,6 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -188,5 +183,4 @@ a {
   color: #42b983;
 }
 </style>
-
 

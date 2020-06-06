@@ -37,15 +37,17 @@
       <ul v-if="results && results.length > 0" class="results">
         <transition-group name="fade" tag="div" appear>
         
-        <li v-for="(result,index) in results" class="item" :key="index">
+        <li v-for="(result,index) in results" class="item" :key="index" v-if= "results.name !==''">{{ results.name }}>
           <h2 class="result-characters">{{ result.name }}</h2>
           <p class="result-characters"><label>url: </label>{{ result.url }}</p>
           <p>
           <router-link
             v-bind:to="{ name: 'CharacterDetails', params: { url: result.url } }"
           >Learn more</router-link>
-        </p> 
+        </p>
+         
         </li>
+        
         </transition-group>
       </ul>
       <div v-else-if="results && results.length === 0" class="no-results">

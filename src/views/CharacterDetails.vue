@@ -64,7 +64,7 @@
 <script>
 import axios from 'axios';
 /*import Characters from '@/views/Characters';*/
-/*import { API } from "@/common/api";*/
+import { API } from "@/common/api";
 require('vue2-animate/dist/vue2-animate.min.css');
 import CubeSpinner from '@/components/CubeSpinner';
 /*import MessageContainer from '@/components/MessageContainer';*/
@@ -111,7 +111,7 @@ export default {
   },
   components: {
     'House': House,
-    'error-list': ErrorList
+    /*'error-list': ErrorList*/
   },
 
   methods: {

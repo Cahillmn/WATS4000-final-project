@@ -38,7 +38,12 @@
         <transition-group name="fade" tag="div" appear>
         <li v-for="(result,index) in results" class="item" :key="index">
           <h2 class="result-characters">{{ result.name }}</h2>
-          <p class="result-characters"><label>url: </label>{{ result.url }}</p> 
+          <p class="result-characters"><label>url: </label>{{ result.url }}</p>
+          <p>
+          <router-link
+            v-bind:to="{ name: 'CharacterDetails', params: { url: url } }"
+          >Learn more</router-link>
+        </p> 
         </li>
         </transition-group>
       </ul>

@@ -6,7 +6,7 @@
     <div class="characters-search">
       <form v-on:submit.prevent="findCharacters">
         <p>
-        <label for="gender">Genders: 
+        <label for="gender">Gender: 
             <select id="gender" v-model="gender">
               <option value="">Select Gender.</option>
               <option value="male">Male</option>

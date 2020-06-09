@@ -6,7 +6,7 @@
     <div class="characters-search">
       <form v-on:submit.prevent="findCharacters">
         <p>
-        <label for="gender">Genders: 
+        <label for="gender">Gender: 
             <select id="gender" v-model="gender">
               <option value="">Select Gender.</option>
               <option value="male">Male</option>
@@ -37,17 +37,15 @@
       <ul v-if="results && results.length > 0" class="results">
         <transition-group name="fade" tag="div" appear>
         
-        <li v-for="(result,index) in results" class="item" :key="index" v-if= "results.name !==''">{{ results.name }}>
+        <li v-for="(result,index) in results" class="item" :key="index">
           <h2 class="result-characters">{{ result.name }}</h2>
           <p class="result-characters"><label>url: </label>{{ result.url }}</p>
           <p>
           <router-link
             v-bind:to="{ name: 'CharacterDetails', params: { url: result.url } }"
           >Learn more</router-link>
-        </p>
-         
+        </p> 
         </li>
-        
         </transition-group>
       </ul>
       <div v-else-if="results && results.length === 0" class="no-results">

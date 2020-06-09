@@ -1,4 +1,6 @@
 <template>
+
+
   <div>
     <div v-if="results" >
      <h2 class= Name> {{ this.results.name }}</h2>
@@ -8,20 +10,27 @@
      <p> {{ this.results.born }}</p>
      <p  class= label>Died: </p>
      <p> {{ this.results.died }}</p>
-
      <p class= label>Titles: </p>
      <ul v-if="results.titles">
        <li v-for="titles in results.titles" :key="titles">
          {{ titles }}
        </li>
       </ul>
-
-    <p class= label>Played by: </p>
+     <p class= label>Played by: </p>
      <ul v-if="results.playedBy">
        <li v-for="actor in results.playedBy" :key="actor">
          {{ actor }}
        </li>
     </ul>
+      
+      <p>
+       <router-link
+         v-bind:to="{ name: 'House', params: { url: result.url } }"
+        >Learn more</router-link>
+      </p>
+    
+
+    
      
      
     </div>
@@ -37,7 +46,7 @@ require('vue2-animate/dist/vue2-animate.min.css');
 
 /*import MessageContainer from '@/components/MessageContainer';*/
 export default {
-  name: 'Characters',
+  name: 'CharacterDetails',
   components: {
    // spinner: CubeSpinner,
     //'House': House,

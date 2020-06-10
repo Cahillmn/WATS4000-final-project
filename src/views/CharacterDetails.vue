@@ -23,12 +23,7 @@
        </li>
     </ul>
       
-      <p>
-       <router-link
-         v-bind:to="{ name: 'House', params: { url: result.url } }"
-        >Learn more</router-link>
-      </p>
-    
+      
 
     
      

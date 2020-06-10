@@ -5,7 +5,7 @@
     </div>
     <div class="characters-search">
       <form v-on:submit.prevent="findCharacters">
-        <p>
+       <!--<p>
         <label for="gender">Gender: 
             <select id="gender" v-model="gender">
               <option value="">Select Gender.</option>
@@ -13,7 +13,13 @@
               <option value="female">Female</option>
             </select>
           </label>
-        </p>
+        </p> -->
+        <p>
+            <label>
+              Enter name
+              <input type="text" v-model="name" placeholder="full name" />
+            </label>
+          </p>
        
         <p>
           <button type="submit">Search</button>
@@ -87,12 +93,31 @@ export default {
     }
   },
   methods: {
-    findCharacters: function() {
+    /*findCharacters: function() {
       this.showSpinner = true;
       this.results = null;
       axios.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50', {
         params: {
           gender: this.gender,
+        }
+      })
+      .then( response => {
+        this.showSpinner = false;
+        this.results = response.data;
+      })
+      .catch( error => {
+        this.showSpinner = false;
+        this.messages.push({
+          type: 'error',
+          text: error.message
+        });*/
+        
+        findCharacters: function() {
+      this.showSpinner = true;
+      this.results = null;
+      axios.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50', {
+        params: {
+          name: this.name,
         }
       })
       .then( response => {

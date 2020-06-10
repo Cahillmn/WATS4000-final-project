@@ -10,20 +10,20 @@
      <p> {{ this.results.born }}</p>
      <p  class= label>Died: </p>
      <p> {{ this.results.died }}</p>
-
      <p class= label>Titles: </p>
      <ul v-if="results.titles">
        <li v-for="titles in results.titles" :key="titles">
          {{ titles }}
        </li>
       </ul>
-
-    <p class= label>Played by: </p>
+     <p class= label>Played by: </p>
      <ul v-if="results.playedBy">
        <li v-for="actor in results.playedBy" :key="actor">
          {{ actor }}
        </li>
     </ul>
+      
+      
 
     
      
@@ -41,7 +41,7 @@ require('vue2-animate/dist/vue2-animate.min.css');
 
 /*import MessageContainer from '@/components/MessageContainer';*/
 export default {
-  name: 'Characters',
+  name: 'CharacterDetails',
   components: {
    // spinner: CubeSpinner,
     //'House': House,

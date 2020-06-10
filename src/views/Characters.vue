@@ -5,21 +5,21 @@
     </div>
     <div class="characters-search">
       <form v-on:submit.prevent="findCharacters">
-       <!--<p>
-        <label for="gender">Gender: 
-            <select id="gender" v-model="gender">
-              <option value="">Select Gender.</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+       <p>
+       <label for="name">Pick a Character: 
+            <select id="name" v-model="name">
+              <option value="">Select Character.</option>
+              <option value="name">Petyr Baelish</option>
+              <option value="name">Jon Snow</option>
             </select>
           </label>
-        </p> -->
-        <p>
+        </p>  
+         <!--<p>
             <label>
               Enter name
               <input type="text" v-model="name" placeholder="full name" />
             </label>
-          </p>
+          </p> -->
        
         <p>
           <button type="submit">Search</button>
@@ -28,14 +28,6 @@
     </div>
     <div class="result-list-container">
       
-     <!-- <ul class="result-list">
-        <transition-group name="slideRight" tag="div" appear>
-        <li v-for="(result,index) in results" :key="index">
-          {{ name }}&nbsp;
-         <button v-on:click="removeWord(word)" class="remove-word">x</button> 
-        </li>
-        </transition-group>
-      </ul> -->
     </div>
     <div class="results-container">
       <spinner v-if="showSpinner"></spinner>
@@ -93,26 +85,7 @@ export default {
     }
   },
   methods: {
-    /*findCharacters: function() {
-      this.showSpinner = true;
-      this.results = null;
-      axios.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50', {
-        params: {
-          gender: this.gender,
-        }
-      })
-      .then( response => {
-        this.showSpinner = false;
-        this.results = response.data;
-      })
-      .catch( error => {
-        this.showSpinner = false;
-        this.messages.push({
-          type: 'error',
-          text: error.message
-        });*/
-        
-        findCharacters: function() {
+    findCharacters: function() {
       this.showSpinner = true;
       this.results = null;
       axios.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50', {
@@ -130,6 +103,25 @@ export default {
           type: 'error',
           text: error.message
         });
+        
+         /*findCharacters: function() {
+      this.showSpinner = true;
+      this.results = null;
+      axios.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50', {
+        params: {
+          name: this.name,
+        }
+      })
+      .then( response => {
+        this.showSpinner = false;
+        this.results = response.data;
+      })
+      .catch( error => {
+        this.showSpinner = false;
+        this.messages.push({
+          type: 'error',
+          text: error.message
+        });*/
       })
     }
   }

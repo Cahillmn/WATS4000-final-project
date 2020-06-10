@@ -9,17 +9,44 @@
        <label for="name">Pick a Character: 
             <select id="name" v-model="name">
               <option value="">Select Character.</option>
-              <option value="name">Petyr Baelish</option>
-              <option value="name">Jon Snow</option>
+              <option> Petyr Baelish</option>
+              <option> Joffrey Baratheon</option>
+              <option> Stannis Baratheon</option>
+              <option> Tommen Baratheon</option>
+              <option> Roose Bolton</option>
+              <option> Brienne of Tarth</option>
+              <option> Sandor Clegane</option>
+              <option> Drogo</option>
+              <option> Walder Frey</option>
+              <option> Gilly</option>
+              <option> Grey Worm</option>
+              <option> Theon Greyjoy</option>
+              <option> Cersei Lannister</option>
+              <option> Jaime Lannister</option>
+              <option> Tyrion Lannister</option>
+              <option> Tywin Lannister</option>
+              <option> Melisandre</option>
+              <option> Jeor Mormont</option>
+              <option> Jorah Mormont</option>
+              <option> Pycelle</option>
+              <option> Jon Snow</option>
+              <option> Ramsay Snow</option>
+              <option> Arya Stark</option>
+              <option> Brandon Stark</option>
+              <option> Catelyn Stark</option>
+              <option> Eddard Stark</option>
+              <option> Robb Stark</option>
+              <option> Sansa Stark</option>
+              <option> Daenerys Targaryen</option>
+              <option> Viserys Targaryen</option>
+              <option> Samwell Tarly</option>
+              <option> Margaery Tyrell</option>
+              <option> Varys</option>
+              <option> Ygritte</option>
+
             </select>
           </label>
-        </p>  
-         <!--<p>
-            <label>
-              Enter name
-              <input type="text" v-model="name" placeholder="full name" />
-            </label>
-          </p> -->
+        </p> 
        
         <p>
           <button type="submit">Search</button>
@@ -37,11 +64,11 @@
         
         <li v-for="(result,index) in results" class="item" :key="index">
           <h2 class="result-characters">{{ result.name }}</h2>
-          <p class="result-characters"><label>url: </label>{{ result.url }}</p>
-          <p>
+          
+          <p class= link>
           <router-link
-            v-bind:to="{ name: 'CharacterDetails', params: { url: result.url } }"
-          >Learn more</router-link>
+            v-bind:to="{ name: 'CharacterDetails', params: { url: result.url } }">
+          Learn more</router-link>
         </p> 
         </li>
         </transition-group>
@@ -56,7 +83,6 @@
 
 <script>
 import axios from 'axios';
-/*import { API } from "@/common/api";*/
 require('vue2-animate/dist/vue2-animate.min.css');
 import CubeSpinner from '@/components/CubeSpinner';
 import MessageContainer from '@/components/MessageContainer';
@@ -103,25 +129,6 @@ export default {
           type: 'error',
           text: error.message
         });
-        
-         /*findCharacters: function() {
-      this.showSpinner = true;
-      this.results = null;
-      axios.get('https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50', {
-        params: {
-          name: this.name,
-        }
-      })
-      .then( response => {
-        this.showSpinner = false;
-        this.results = response.data;
-      })
-      .catch( error => {
-        this.showSpinner = false;
-        this.messages.push({
-          type: 'error',
-          text: error.message
-        });*/
       })
     }
   }
@@ -129,38 +136,7 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  text-align: left;
-}
-.word-search {
-  font-size: 1.2rem;
-  white-space: nowrap;
-  display: inline-block;
-  width: 70%;
-  float: left;
-}
-.word-list-container {
-  display: inline-block;
-  width: 25%;
-  background: #e8e8e8;
-  padding: 0.5rem;
-}
-.results-container {
-  clear: both;
-  
-}
-input[type="text"] {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #333;
-  width: 300px;
-  font-size: 1.2rem;
-  color: #2c3e50;
-  font-weight: 300;
-  background: rgba(0, 0, 0, 0.02);
-  padding: 0.5rem;
-}
+
 button {
   background: #333;
   padding: 0.5rem;
@@ -177,24 +153,15 @@ h2 {
   font-weight: normal;
   text-align: center;
 }
-ul.results,
-ul.word-list {
-  list-style-type: none;
-  padding: 0;
-}
-.word-list li {
-  margin: 5px 0;
-  padding: 5px 0;
-  border-bottom: 1px solid #333;
-}
+
 .results li {
   text-align: left;
   display: inline-block;
   margin: 10px;
   border: solid 1px #333;
   padding: 0.5rem;
-  width: 500px;
-  min-height: 250px;
+  width: 300px;
+  min-height: 150px;
   color: gold;
   font-weight: 300;
   font-size: 1.2rem;
@@ -202,16 +169,11 @@ ul.word-list {
   
   
 }
-ul.errors {
-  list-style-type: none;
+.link {
+  text-align: center;
 }
-.errors li {
-  border: 1px solid red;
-  color: red;
-  padding: 0.5rem;
-  margin: 10px 0;
-}
+
 a {
-  color: #42b983;
-}
+  color: white;
+} 
 </style>

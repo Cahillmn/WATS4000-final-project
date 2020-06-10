@@ -1,4 +1,4 @@
-<template>
+ <template>
   <transition name="fade" appear tag="div">
     <li v-bind:class="[message.type, 'message']" v-show="showMessage">
       {{ message.text }}
@@ -33,21 +33,5 @@ export default {
 </script>
 
 <style scoped>
-.message {
-  margin: 5px;
-  padding: 5px;
-  font-size: 1rem;
-}
-.error {
-  background: pink;
-  color: red;
-}
-.success {
-  background: green;
-  color: white;
-}
-.info {
-  background: blue;
-  color: white;
-}
-</style>
+
+</style> 

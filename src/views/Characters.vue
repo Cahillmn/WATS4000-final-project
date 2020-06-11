@@ -1,5 +1,8 @@
 <template>
 <div>
+
+  <!-- The following section provides a dropdown menu of characters that are submitted to the API -->
+
   <div class="messages">
       <message-container v-bind:messages="messages"></message-container>
     </div>
@@ -56,7 +59,10 @@
     <div class="result-list-container">
       
     </div>
+
+    <!-- This section defines results that should be returned based on the search -->
     <div class="results-container">
+      
       <spinner v-if="showSpinner"></spinner>
       <h2 v-if="results && results.length > 0">{{ results.length }} Characters Found</h2>
       <ul v-if="results && results.length > 0" class="results">

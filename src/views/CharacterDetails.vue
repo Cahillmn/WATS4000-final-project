@@ -1,5 +1,8 @@
 <template>
   <div>
+    
+    <!-- The results that are returned when a user clicks on learn more in the Characters.vue page -->
+
     <div v-if="results">
       <h2 class="Name">{{ this.results.name }}</h2>
       <p class="label">Gender:</p>

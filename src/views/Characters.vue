@@ -11,7 +11,7 @@
        <p>
        <label for="name">Pick a Character: 
             <select id="name" v-model="name">
-              <option value="">Select Character.</option>
+              <option value="">Select Character</option>
               <option> Petyr Baelish</option>
               <option> Joffrey Baratheon</option>
               <option> Stannis Baratheon</option>
@@ -62,7 +62,7 @@
 
     <!-- This section defines results that should be returned based on the search -->
     <div class="results-container">
-      
+
       <spinner v-if="showSpinner"></spinner>
       <h2 v-if="results && results.length > 0">{{ results.length }} Characters Found</h2>
       <ul v-if="results && results.length > 0" class="results">
